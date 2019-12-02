@@ -1,8 +1,6 @@
 package com.dr.sprintboot.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class Comment {
@@ -29,4 +27,7 @@ public class Comment {
     public void setBody(String body) {
         this.body = body;
     }
+
+    @ManyToMany(mappedBy = "Comment")
+    private Link link;
 }
